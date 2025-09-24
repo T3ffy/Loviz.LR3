@@ -1,0 +1,15 @@
+Z:\Lovis\lr3\lr3.2\bin\Debug\net8.0\lr3.2.exe
+Z:\Lovis\lr3\lr3.2\bin\Debug\net8.0\lr3.2.deps.json
+Z:\Lovis\lr3\lr3.2\bin\Debug\net8.0\lr3.2.runtimeconfig.json
+Z:\Lovis\lr3\lr3.2\bin\Debug\net8.0\lr3.2.dll
+Z:\Lovis\lr3\lr3.2\bin\Debug\net8.0\lr3.2.pdb
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.AssemblyInfoInputs.cache
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.AssemblyInfo.cs
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.csproj.CoreCompileInputs.cache
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.sourcelink.json
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.dll
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\refint\lr3.2.dll
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.pdb
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\lr3.2.genruntimeconfig.cache
+Z:\Lovis\lr3\lr3.2\obj\Debug\net8.0\ref\lr3.2.dll
