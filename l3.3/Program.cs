@@ -1,4 +1,5 @@
-﻿public class Node
+﻿using System;
+public class Node
 {
     public string Data { get; set; }
     public Node Next { get; set; }
@@ -133,7 +134,59 @@ public class Queue
         Console.WriteLine($"Элемент '{data}' не найден в очереди");
         return null;
     }
+   public Node FindandHead(string data)
+{
+    if (head == null)
+    {
+        Console.WriteLine("Очередь пуста");
+        return null;
+    }
 
+    Node current = head;
+    Node previous = null;
+    Node foundNode = null;
+
+
+    while (current != null)
+    {
+        if (current.Data.Equals(data, StringComparison.OrdinalIgnoreCase))
+        {
+            foundNode = current;
+            break;
+        }
+        previous = current;
+        current = current.Next;
+    }
+
+
+    if (foundNode == null)
+    {
+        Console.WriteLine($"Элемент '{data}' не найден в очереди");
+        return null;
+    }
+
+
+    if (foundNode == head)
+    {
+        Console.WriteLine($"Элемент '{data}' уже находится в начале очереди");
+        return foundNode;
+    }
+
+
+    if (previous != null)
+        previous.Next = foundNode.Next;
+
+
+    if (foundNode == last)
+        last = previous;
+
+
+    foundNode.Next = head;
+    head = foundNode;
+
+    Console.WriteLine($"Элемент '{data}' перемещен в начало очереди");
+    return foundNode;
+}
     // Удаление конкретного элемента из очереди (аналог del)
     public void Remove(string data)
     {
@@ -259,6 +312,7 @@ class Program
                     queue.Find(searchData);
                     break;
 
+
                 case "6":
                     Console.Write("Введите значение для удаления: ");
                     string removeData = Console.ReadLine();
@@ -271,6 +325,11 @@ class Program
 
                 case "8":
                     Console.WriteLine(queue.IsEmpty() ? "Очередь пуста" : "Очередь не пуста");
+                    break;
+                case "9":
+                    Console.Write("Введите значение для поиска: ");
+                    string NewFirst = Console.ReadLine();
+                    queue.FindandHead(NewFirst);
                     break;
 
                 case "0":

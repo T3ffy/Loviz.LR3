@@ -1,4 +1,5 @@
-﻿public class PriorityNode
+﻿using System;
+public class PriorityNode
 {
     public string Data { get; set; }
     public int Priority { get; set; }
@@ -19,6 +20,11 @@ public class PriorityQueue
     private int length = 0;
 
     public int Length => length;
+    ~PriorityQueue()
+    {
+        // Освобождаем все узлы очереди;
+        Clear();
+    }
 
     // Создание нового элемента с приоритетом
     private PriorityNode CreateNode()
@@ -36,6 +42,11 @@ public class PriorityQueue
         if (!int.TryParse(Console.ReadLine(), out int priority))
         {
             Console.WriteLine("Неверный формат приоритета");
+            return null;
+        }
+        else if(priority<0)
+        {
+            Console.WriteLine("Неверный формат приоритета,число должно быть больше 0");
             return null;
         }
 
@@ -68,6 +79,7 @@ public class PriorityQueue
 
             while (current != null && current.Priority <= newNode.Priority)
             {
+                
                 previous = current;
                 current = current.Next;
             }
@@ -260,6 +272,13 @@ public class PriorityQueue
     // Очистка всей очереди
     public void Clear()
     {
+        PriorityNode current = head;
+        while (current != null)
+        {
+            PriorityNode next = current.Next;
+            current.Next = null; // Разрываем ссылки
+            current = next;
+        }
         head = null;
         last = null;
         length = 0;
@@ -281,9 +300,9 @@ class Program
         while (true)
         {
             Console.WriteLine("\n=== ПРИОРИТЕТНАЯ ОЧЕРЕДЬ ===");
-            Console.WriteLine("1. Добавить элемент (Enqueue)");
-            Console.WriteLine("2. Извлечь элемент (Dequeue)");
-            Console.WriteLine("3. Просмотреть первый элемент (Peek)");
+            Console.WriteLine("1. Добавить элемент ");
+            Console.WriteLine("2. Извлечь элемент ");
+            Console.WriteLine("3. Просмотреть первый элемент ");
             Console.WriteLine("4. Показать всю очередь");
             Console.WriteLine("5. Найти элемент по значению");
             Console.WriteLine("6. Найти элементы по приоритету");
